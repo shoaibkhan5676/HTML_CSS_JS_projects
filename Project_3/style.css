@@ -1,0 +1,129 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+
+
+*{
+    /* margin: 0; */
+    /* padding: 0; */
+    box-sizing: border-box;
+}
+
+body{
+
+    overflow-x: hidden;
+    font-family: "lato" ,sans-serif;
+    background-color: #333;
+    color: #222;
+    margin: 0;
+
+}
+.container.spin + .nav li{
+    transform: translateX(0);
+    transition-delay: 0.3s;
+}
+.container.spin .circle{
+    transform: rotate(-70deg);
+
+}
+.container{
+    background-color: #fafafa;
+    transform-origin: top left;
+    transition: transform 0.5s linear;
+    padding: 50px;
+    width: 100vw;
+    min-height: 100vh;
+}
+
+
+
+.container.spin{
+    transform: rotate(-25deg);
+}
+.main-content img{
+    max-width: 100%;
+}
+
+.circle-container{
+    position: fixed;
+    top: -100px;
+    left: -100px;
+}
+.circle{
+    background-color: #ff7979;
+    height: 190px;
+    width: 190px;
+    border-radius: 50%;
+    color: white;
+    position: relative;
+    transition: transform 0.5s linear;
+}
+button{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 100px;
+    background: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 26px;
+
+
+}
+#close{
+    top: 60%;
+    transform: rotate(90deg);
+    transform-origin: top left;
+
+}
+#open{
+    left: 60%;
+}
+
+.main-content{
+    max-width: 1000px;
+    margin: 50px auto;
+}
+.main-content h1{
+    margin: 0;
+}
+.main-content small{
+    color: #555;
+    font-style: italic;
+}
+.main-content p{
+    color: #333;
+    line-height: 1.5;
+}
+
+.nav {
+    position: fixed;
+    bottom: 40px;
+    left: 0;
+    color: white;
+    z-index: 100;
+}
+.nav ul{
+    list-style-type: none;
+    padding-left: 30px;
+}
+.nav ul li{
+    text-transform: uppercase;
+    margin: 40px 0;
+    transform: translateX(-100%);
+    transition: transform 0.4s ease-in;
+
+
+}
+.nav ul li i{
+    margin-right: 15px;
+    font-size: 20px;
+}
+.nav li+li{
+    margin-left: 15px;
+    transform:  translateX(-150%);
+}
+.nav li+li+li{
+    margin-left: 30px;
+    transform: translateX(-200%);
+}

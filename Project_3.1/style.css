@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;300;400;700;900;1,300&display=swap');
+
+
+
+*{
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    font-family: "Lato",sans-serif;
+    background-color: #333;
+    color: #222;
+    overflow-x: hidden;
+
+}
+.container{
+    background-color: #fff;
+    /* max-width: 1000px; */
+    transform-origin: top left;
+    padding: 50px;
+    transition: transform 0.5s linear;
+
+}
+
+.container.spin{
+    transform: rotate(-20deg);
+}
+.container.spin + nav li{
+    transform: translateX(0);
+    transition-delay: 0.3s;
+}
+.container.spin .circle{
+    transform: rotate(-100deg);
+}
+
+
+
+
+.circle-container{
+    position: fixed;
+    top: -100px;
+    left: -100px;
+}
+.circle{
+    background-color: #ff7979;
+    height: 190px;
+    width: 190px;
+    border-radius: 50%;
+    transition: transform 0.5s linear;
+}
+.circle button{
+    color: white;
+    position: relative;
+    height: 100px;
+    top: 50%;
+    left: 50%;
+    cursor: pointer;
+    font-size: 24px;
+    border: none;
+    background: transparent;
+}
+.circle button:focus{
+    outline: none;
+}
+#open{
+    top: 45%;
+}
+#close{
+    left: 50%;
+    transform: rotate(90deg);
+    transform-origin: top left;
+
+}
+.main-content{
+    max-width: 1000px;
+    margin: 50px auto;
+}
+
+.main-content small{
+    font-style: italic;
+    color: #555;
+}
+.main-content h1{
+    margin: 0;
+}
+.main-content p{
+    line-height: 1.5;
+    color: #333;
+}
+.main-content img{
+    max-width: 100%;
+}
+
+
+
+nav{
+    position: fixed;
+    bottom: 40px;
+    left: 10px;
+    color: white;
+    z-index: 100;
+
+}
+
+nav i{
+    margin-right: 15px;
+    font-size: 20px;
+
+}
+nav li{
+    margin-bottom: 25px;
+    cursor: pointer;
+    transition: all 0.5s ease-in;
+    padding-bottom: 10px;
+    position: relative;
+    transform: translateX(-100%);
+}
+nav ul{
+    list-style-type: none;
+}
+nav li+li{
+    margin-left: 15px;
+    transform: translateX(-150%);
+}
+nav li+li+li{
+    margin-left: 30px;
+    transform: translateX(-200%);
+}
+
+li::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background-color: transparent; /* Change the color as needed */
+    transition: all 0.3s ease; /* Adjust the transition properties as needed */
+}
+li:hover::after {
+    background-color: #fff; /* Change the color as needed */
+}
